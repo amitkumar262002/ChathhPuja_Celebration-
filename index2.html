@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chhath Puja • Celebration — 28 Oct 2025</title>
+  <meta name="description" content="Chhath Puja Bihar Celebration — Countdown, Gallery, Prasad, Floating Diyas, Sun Rise, Dark/Light Mode, RSVP & Feedback" />
+  <!-- Use Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+  /* ------------------------
+     Base / Theme
+     ------------------------ */
+  :root{
+    --bg-day: #fff7ec;
+    --bg-night: #071227;
+    --accent: #ffb84d;
+    --accent-2: #ff6b6b;
+    --muted: #6b7280;
+    --card: rgba(255,255,255,0.85);
+    --glass: rgba(255,255,255,0.55);
+  }
+  html,body{height:100%;}
+  body{
+    margin:0;
+    font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: linear-gradient(180deg,var(--bg-day),#fff);
+    color:#0f172a;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+  }
+  /* Dark mode toggled by .dark on body */
+  body.dark{
+    background: linear-gradient(180deg,var(--bg-night), #02101b);
+    color: #e6eef8;
+  }
+
+  /* Container */
+  .wrap{max-width:1100px;margin:0 auto;padding:20px;position:relative;z-index:5;}
+
+  header{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;
+  }
+  .brand{display:flex;gap:12px;align-items:center;}
+  .brand .logo-3d{width:68px;height:68px;perspective:800px;}
+  .logo-inner{
+    width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ffdb9b);
+    display:flex;align-items:center;justify-content:center;color:white;font-weight:800;
+    box-shadow:0 8px 30px rgba(255,184,77,0.25);
+    transform-style:preserve-3d;
+    transition:transform .8s cubic-bezier(.2,.9,.2,1);
+  }
+  /* 360 rotate animation (during splash) */
+  .spin-360{animation:spin360 3s linear both;}
+  @keyframes spin360{from{transform:rotateY(0)}to{transform:rotateY(360deg)}}
+
+  .title{
+    font-family:'Playfair Display', serif;
+  }
+  .subtitle{font-size:13px;color:var(--muted)}
+
+  /* Controls */
+  .controls{display:flex;gap:8px;align-items:center;}
+  .btn{padding:9px 14px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);background:white;cursor:pointer;font-weight:600;box-shadow:0 6px 18px rgba(15,23,42,0.06);transition:all .18s}
+  .btn:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(15,23,42,0.12)}
+  body.dark .btn{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06)}
+
+  /* Splash overlay */
+  #splash{
+    position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(3,7,18,0.96),rgba(8,12,25,0.98));color:white;z-index:9999;flex-direction:column;
+  }
+  #splash .splash-logo{
+    width:220px;height:220px;border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 40px 80px rgba(0,0,0,0.5);
+    background: radial-gradient(circle at 30% 25%, rgba(255,230,180,0.85), rgba(255,160,40,0.9));
+    transform-style:preserve-3d;
+  }
+  #splash h1{margin-top:18px;font-size:26px;letter-spacing:1px}
+  #splash p{opacity:.9;color:rgba(255,255,255,.9);margin-top:8px;font-size:14px}
+
+  /* Main hero */
+  .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:stretch;margin-bottom:18px;}
+  .card{background:var(--card);padding:18px;border-radius:16px;box-shadow:0 10px 30px rgba(12,24,40,0.08);transition:transform .18s, box-shadow .18s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(12,24,40,0.12)}
+  body.dark .card{background:rgba(255,255,255,0.03);box-shadow:none;border:1px solid rgba(255,255,255,0.04)}
+
+  .big-title{font-size:28px;margin:6px 0 10px}
+  .muted{color:var(--muted);font-size:14px}
+
+  /* Countdown style */
+  .countdown{display:flex;gap:12px;align-items:center;margin-top:12px}
+  .count-pill{background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.85));padding:14px;border-radius:12px;min-width:80px;text-align:center;font-weight:800}
+  body.dark .count-pill{background:rgba(255,255,255,0.04)}
+
+  /* Sun & water area */
+  .sun-area{position:relative;height:300px;border-radius:12px;overflow:hidden}
+  .sky{position:absolute;inset:0;background:linear-gradient(180deg,#ffe7b8,#ffd9a6 45%, #fff0d6 60%)}
+  body.dark .sky{background:linear-gradient(180deg,#04132a,#002034 45%, #021521 60%)}
+  .sun{position:absolute;left:50%;transform:translateX(-50%);bottom:-120px;width:160px;height:160px;border-radius:50%;box-shadow:0 20px 80px rgba(255,160,40,0.35);display:flex;align-items:center;justify-content:center}
+  .sun .core{width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,#fff7e6,#ffdb7f);box-shadow:0 6px 30px rgba(255,150,40,0.4);animation:corePulse 3s ease-in-out infinite}
+  @keyframes corePulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+  /* sun rise animation (we will set move via JS) */
+
+  /* reflection */
+  .water{position:absolute;left:0;right:0;bottom:0;height:110px;background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));filter:blur(0.2px)}
+  .water::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg, rgba(255,255,255,0.02) 0 4px, transparent 4px 8px);opacity:.9;animation:shimmer 6s linear infinite}
+  @keyframes shimmer{from{background-position:0 0}to{background-position:200% 200%}}
+
+  /* Diyas floating */
+  .diyas{position:absolute;left:0;right:0;bottom:20px;display:flex;gap:12px;justify-content:center;pointer-events:none}
+  .diya{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#3a2b10,#6a3f1d);box-shadow:0 8px 20px rgba(0,0,0,0.2);transform-origin:center;animation:diyaFloat 6s ease-in-out infinite;opacity:0;transition:opacity .6s}
+  .diya.visible{opacity:1}
+  @keyframes diyaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+  .flame{width:14px;height:20px;background:radial-gradient(circle at 40% 30%,#fff7d0,#ffd14d 30%, #ff6b6b 80%);border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;box-shadow:0 6px 14px rgba(255,120,20,0.3);filter:blur(0.3px);animation:flicker 1.8s infinite ease-in-out}
+  @keyframes flicker{0%{transform:scaleY(1)}50%{transform:scaleY(0.95)}100%{transform:scaleY(1)}}
+
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .gallery img{width:100%;height:120px;object-fit:cover;border-radius:10px;transition:transform .35s,ease;cursor:pointer}
+  .gallery img:hover{transform:scale(1.06);filter:brightness(1.03)}
+
+  /* prasad list */
+  .prasad{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .prasad .item{display:flex;gap:8px;align-items:center;background:rgba(255,255,255,0.6);padding:8px;border-radius:10px}
+  body.dark .prasad .item{background:rgba(255,255,255,0.03)}
+
+  /* feedback & rsvp */
+  form input, form select, form textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);margin-top:6px}
+  body.dark form input{border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+  .submit{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border:none;padding:10px 14px;border-radius:10px;font-weight:800;cursor:pointer}
+  .submit:hover{transform:translateY(-4px)}
+
+  /* footer */
+  footer{font-size:13px;opacity:.9;margin-top:18px;color:var(--muted)}
+
+  /* utility hover all over (user asked hover everywhere) */
+  .hov:hover{transform:translateY(-6px);transition:all .18s}
+
+  /* responsive */
+  @media(max-width:960px){
+    .hero{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:520px){
+    .gallery img{height:90px}
+    .logo-inner{width:58px;height:58px}
+  }
+  </style>
+</head>
+<body>
+  <!-- SPLASH (will auto-hide after 3s) -->
+  <div id="splash" aria-hidden="false">
+    <div class="splash-logo" id="splashLogo" aria-hidden="true" role="img" title="Chhath Puja">
+      <!-- fancy SVG mark inside rotating box -->
+      <svg width="140" height="140" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="gA" cx="30%" cy="25%">
+            <stop offset="0%" stop-color="#fff9e6"/>
+            <stop offset="50%" stop-color="#ffd37a"/>
+            <stop offset="100%" stop-color="#ff7b7b"/>
+          </radialGradient>
+        </defs>
+        <rect x="10" y="10" width="180" height="180" rx="22" fill="url(#gA)"/>
+        <g transform="translate(100,100)">
+          <circle r="34" fill="#fff"/>
+          <path d="M0-34 L8 -50 L-8 -50 Z" fill="#ffd37a" transform="rotate(10)"/>
+          <text x="0" y="8" font-size="28" font-weight="700" font-family='Playfair Display' text-anchor="middle" fill="#7a2b2b">Chhath</text>
+        </g>
+      </svg>
+    </div>
+    <h1>Chhath Puja • Bihar Celebration</h1>
+    <p>Ganga Ghats — 28 October 2025 — Sunrise Arghya</p>
+  </div>
+
+  <!-- Page content -->
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo-3d hov" id="logo3d">
+          <div class="logo-inner" id="logoInner">CP</div>
+        </div>
+        <div>
+          <div class="title big-title">Chhath Puja • Bihar Celebration</div>
+          <div class="subtitle">28 October 2025 — Ganga Ghats • Bhor Arghya: 05:15 IST</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn hov" id="modeToggle">Dark / Light</button>
+        <button class="btn hov" id="dholBtn">Dhol</button>
+        <button class="btn hov" id="openGallery">Gallery</button>
+      </div>
+    </header>
+
+    <!-- Hero area -->
+    <div class="hero">
+      <div class="card">
+        <div class="big-title">Celebrate Chhath — Real Bihar Feel</div>
+        <div class="muted">Rituals: Nahay-Khay • Kharna • Sandhya Arghya • Bhor Arghya</div>
+
+        <div style="margin-top:14px">
+          <div class="countdown" aria-live="polite">
+            <div class="count-pill" id="days">--</div>
+            <div class="count-pill" id="hours">--</div>
+            <div class="count-pill" id="mins">--</div>
+            <div class="count-pill" id="secs">--</div>
+          </div>
+          <div style="margin-top:12px" class="muted">Countdown to Bhor Arghya — 28 Oct 2025 (05:15 IST)</div>
+        </div>
+
+        <div style="margin-top:14px">
+          <button class="submit hov" id="rsvpOpen">RSVP / Volunteer</button>
+          <button class="btn hov" id="feedbackOpen">Feedback</button>
+        </div>
+
+        <!-- prasad list -->
+        <div style="margin-top:14px">
+          <div style="font-weight:800;margin-bottom:8px">Chhath Pakwan (Prasad)</div>
+          <div class="prasad" id="prasadList">
+            <div class="item hov"><img src="https://i.ibb.co/Kw8d4Y3/thekua.png" width="36" style="border-radius:6px"/> <div>Thekua</div></div>
+            <div class="item hov"><img src="https://i.ibb.co/7y2y3c3/laddu.png" width="36" style="border-radius:6px"/> <div>Laddu / Gur</div></div>
+            <div class="item hov"><img src="https://i.ibb.co/pxKLN6C/banana.png" width="36" style="border-radius:6px"/> <div>Kela / Seasonal Fruit</div></div>
+            <div class="item hov"><img src="https://i.ibb.co/D9Tg8Z9/coconut.png" width="36" style="border-radius:6px"/> <div>Nariyal</div></div>
+            <div class="item hov"><img src="https://i.ibb.co/HFzQq8J/sweet.png" width="36" style="border-radius:6px"/> <div>Halwa / Kheer</div></div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="muted">Tip: Aap apne ghar se bhi traditional bamboo basket (soop) aur thekua lekar aa sakte hain.</div>
+
+      </div>
+
+      <!-- Sun & water card -->
+      <div class="card sun-area" id="sunCard" aria-hidden="false">
+        <div class="sky"></div>
+        <div class="sun" id="sunEl" style="bottom:-140px">
+          <div class="core"></div>
+        </div>
+        <div class="water"></div>
+
+        <!-- diyas container -->
+        <div class="diyas" id="diyaRow">
+          <!-- diyas will be injected by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery & schedule -->
+    <div style="display:grid;grid-template-columns:1fr 360px;gap:18px">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div style="font-weight:800">Gallery</div>
+          <div class="muted">Click to enlarge</div>
+        </div>
+        <div style="margin-top:12px" class="gallery" id="galleryGrid">
+          <!-- placeholder images -->
+          <img src="https://images.unsplash.com/photo-1549562901-4f5e5f0f2b1f?q=80&w=800&auto=format&fit=crop" alt="g1" />
+          <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?q=80&w=800&auto=format&fit=crop" alt="g2" />
+          <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=800&auto=format&fit=crop" alt="g3" />
+          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop" alt="g4" />
+          <img src="https://images.unsplash.com/photo-1542736667-069246bdbc76?q=80&w=800&auto=format&fit=crop" alt="g5" />
+          <img src="https://images.unsplash.com/photo-1485178575877-1a13bf489dfe?q=80&w=800&auto=format&fit=crop" alt="g6" />
+        </div>
+      </div>
+
+      <aside class="card">
+        <div style="font-weight:800;margin-bottom:8px">Schedule — 28 Oct 2025</div>
+        <div style="display:grid;gap:8px">
+          <div><strong>04:00</strong> — Preparation & Cleaning</div>
+          <div><strong>05:15</strong> — Bhor Arghya (Sunrise)</div>
+          <div><strong>07:30</strong> — Community Prasad & Aashirwad</div>
+        </div>
+
+        <div style="margin-top:14px">
+          <div style="font-weight:800">Feedback</div>
+          <div class="muted" style="font-size:13px">Aapka sujhav humein behtar banata hai</div>
+          <textarea id="feedbackText" rows="4" placeholder="Apna feedback likhe..." style="margin-top:8px;border-radius:8px;padding:8px;width:100%"></textarea>
+          <button class="btn hov" id="feedbackSend" style="margin-top:8px;width:100%">Send Feedback</button>
+          <div id="feedbackMsg" style="margin-top:8px;color:green;display:none">Dhanyavaad! Aapka feedback receive ho gaya hai.</div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © 2025 • Chhath Puja Community Celebration — Built with ❤️ — Bihar traditions preserved.
+    </footer>
+  </div>
+
+  <!-- Light weight modal for gallery -->
+  <div id="modal" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.8);z-index:9998">
+    <img id="modalImg" src="" style="max-width:92%;max-height:88%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.6)"/>
+  </div>
+
+  <script>
+  /* ============================
+     Configuration & Helpers
+     ============================ */
+
+  // Target: Bhor Arghya 28 Oct 2025 05:15 IST (+05:30)
+  const targetDate = new Date('2025-10-28T05:15:00+05:30');
+
+  // Utility for query
+  const $ = sel => document.querySelector(sel);
+  const $$ = sel => Array.from(document.querySelectorAll(sel));
+
+  /* ============================
+     SPLASH: show for 3 seconds
+     ============================ */
+  (function handleSplash(){
+    const splash = document.getElementById('splash');
+    const logoInner = document.getElementById('splashLogo').firstElementChild;
+    // add spin class to inner - 360deg during 3s
+    document.getElementById('splashLogo').classList.add('spin-360');
+    // After 3s hide
+    setTimeout(()=> {
+      splash.style.transition = 'opacity .6s, transform .6s';
+      splash.style.opacity = 0;
+      splash.style.transform = 'scale(.98)';
+      setTimeout(()=> splash.remove(), 650);
+      // also add gentle logo rotation on main logo
+      setTimeout(()=> {
+        const li = document.getElementById('logoInner');
+        li.classList.add('spin-360');
+        // remove spin after complete to avoid continuous animation; add small hover
+        setTimeout(()=> li.classList.remove('spin-360'), 3000);
+      },200);
+    }, 3000);
+  })();
+
+  /* ============================
+     Logo 3D hover rotate
+     ============================ */
+  (function logo3d(){
+    const logo = $('#logo3d');
+    const inner = $('#logoInner');
+    logo.addEventListener('mousemove', e=>{
+      const r = logo.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      inner.style.transform = `rotateY(${x*18}deg) rotateX(${ -y*12 }deg) translateZ(6px)`;
+    });
+    logo.addEventListener('mouseleave', ()=> inner.style.transform='translateZ(0) rotateY(0) rotateX(0)');
+    // click effect
+    logo.addEventListener('click', ()=>{
+      inner.style.transition='transform .5s cubic-bezier(.2,.9,.2,1)';
+      inner.style.transform+=' scale(1.04)';
+      setTimeout(()=> inner.style.transform = 'translateZ(0)', 420);
+    });
+  })();
+
+  /* ============================
+     Countdown logic
+     ============================ */
+  (function countdown(){
+    const dEl = $('#days'), hEl = $('#hours'), mEl = $('#mins'), sEl = $('#secs');
+    function update(){
+      const now = new Date();
+      let diff = Math.max(0, targetDate - now);
+      const days = Math.floor(diff / (1000*60*60*24));
+      diff -= days * (1000*60*60*24);
+      const hours = Math.floor(diff / (1000*60*60));
+      diff -= hours * (1000*60*60);
+      const mins = Math.floor(diff / (1000*60));
+      diff -= mins * (1000*60);
+      const secs = Math.floor(diff / 1000);
+      dEl.textContent = days + 'd';
+      hEl.textContent = String(hours).padStart(2,'0') + 'h';
+      mEl.textContent = String(mins).padStart(2,'0') + 'm';
+      sEl.textContent = String(secs).padStart(2,'0') + 's';
+      // If time reached -> show message and maybe trigger sunrise fully
+      if(days===0 && hours===0 && mins===0 && secs===0){
+        // celebration trigger
+        celebrateMoment();
+      }
+    }
+    update(); setInterval(update, 1000);
+  })();
+
+  /* ============================
+     Sun rise animation
+     ============================ */
+  (function sunRise(){
+    const sun = document.getElementById('sunEl');
+    // We'll compute a simple progress based on time until target:
+    function updatePosition(){
+      const now = new Date();
+      const totalWindow = 1000 * 60 * 60 * 6; // 6 hours window for rise visual (pre sunrise -> after)
+      const diffStart = targetDate - now; // ms until target
+      // Map diffStart to progress (0..1) where 0 => far before, 1 => after target
+      const maxAhead = totalWindow; // 6 hours ahead shows sun low
+      const progress = 1 - Math.max(-1, Math.min(1, (diffStart) / maxAhead));
+      // compute bottom position: from -140px (hidden) to 40px (sun up)
+      const minB = -140, maxB = 40;
+      const b = Math.round(minB + (maxB - minB) * progress);
+      sun.style.bottom = b + 'px';
+      // also adjust sun brightness via box-shadow and core scale
+      const core = sun.querySelector('.core');
+      const scale = 0.9 + progress*0.2;
+      core.style.transform = `scale(${scale})`;
+    }
+    updatePosition();
+    setInterval(updatePosition, 15000); // update fairly often
+  })();
+
+  /* ============================
+     Inject floating diyas
+     ============================ */
+  (function makeDiyas(){
+    const diyaRow = document.getElementById('diyaRow');
+    const count = 7;
+    for(let i=0;i<count;i++){
+      const d = document.createElement('div');
+      d.className = 'diya hov';
+      // stagger animation delay and left offset
+      d.style.animationDelay = (i*0.6)+'s';
+      // create inner flame
+      d.innerHTML = '<div class="flame"></div>';
+      diyaRow.appendChild(d);
+      // reveal slowly
+      setTimeout(()=> d.classList.add('visible'), 500 + i*300);
+    }
+  })();
+
+  /* ============================
+     Gallery modal
+     ============================ */
+  (function gallery(){
+    const imgs = $$('#galleryGrid img');
+    const modal = $('#modal');
+    const modalImg = $('#modalImg');
+    imgs.forEach(img=>{
+      img.addEventListener('click', ()=>{
+        modalImg.src = img.src;
+        modal.style.display = 'flex';
+      });
+    });
+    modal.addEventListener('click', ()=> modal.style.display = 'none');
+    $('#openGallery').addEventListener('click', ()=> {
+      // scroll to gallery grid
+      document.getElementById('galleryGrid').scrollIntoView({behavior:'smooth'});
+    });
+  })();
+
+  /* ============================
+     RSVP & Feedback simple handling
+     ============================ */
+  (function forms(){
+    $('#rsvpOpen').addEventListener('click', ()=>{
+      const name = prompt('Aapka Naam (RSVP ke liye):');
+      if(!name) return alert('RSVP cancelled');
+      const phone = prompt('Phone number:');
+      if(!phone) return alert('Cancelled');
+      console.log('RSVP:', {name, phone, time: new Date().toISOString()});
+      alert(`Dhanyavaad ${name}! Aapka RSVP receive ho gaya hai.`);
+    });
+
+    $('#feedbackSend').addEventListener('click', ()=>{
+      const val = $('#feedbackText').value.trim();
+      if(!val) return alert('Please write feedback first.');
+      // demo: store locally
+      const all = JSON.parse(localStorage.getItem('chhath_feedback')||'[]');
+      all.push({text:val, ts:new Date().toISOString()});
+      localStorage.setItem('chhath_feedback', JSON.stringify(all));
+      $('#feedbackMsg').style.display = 'block';
+      setTimeout(()=> $('#feedbackMsg').style.display = 'none', 2800);
+      $('#feedbackText').value = '';
+    });
+  })();
+
+  /* ============================
+     Dark/Light mode toggle
+     ============================ */
+  (function modeToggle(){
+    const btn = document.getElementById('modeToggle');
+    // load from localStorage
+    const pref = localStorage.getItem('chhath_theme');
+    if(pref==='dark') document.body.classList.add('dark');
+    btn.addEventListener('click', ()=>{
+      document.body.classList.toggle('dark');
+      localStorage.setItem('chhath_theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    });
+  })();
+
+  /* ============================
+     Dhol click sound (WebAudio)
+     ============================ */
+  (function dhol(){
+    const btn = document.getElementById('dholBtn');
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    let ctx;
+    function playDhol(){
+      if(!ctx) ctx = new AudioCtx();
+      const o = ctx.createOscillator();
+      const g = ctx.createGain();
+      o.type = 'sawtooth';
+      o.frequency.value = 120; // bass thump
+      g.gain.value = 0.001;
+      o.connect(g);
+      g.connect(ctx.destination);
+      // envelope
+      g.gain.linearRampToValueAtTime(0.6, ctx.currentTime+0.005);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+0.6);
+      o.start();
+      o.stop(ctx.currentTime+0.65);
+    }
+    btn.addEventListener('click', ()=> {
+      // play a short dhol beat sequence
+      playDhol();
+      setTimeout(playDhol, 220);
+      setTimeout(playDhol, 440);
+    });
+  })();
+
+  /* ============================
+     Simple celebration trigger
+     ============================ */
+  function celebrateMoment(){
+    // brief fireworks canvas burst + sound
+    runFireworksBurst();
+    // brief visual pulse
+    const sun = document.getElementById('sunEl');
+    sun.animate([{transform:'translateY(0) scale(1)'},{transform:'translateY(-8px) scale(1.06)'},{transform:'translateY(0) scale(1)'}],{duration:900,iterations:1});
+  }
+
+  /* ============================
+     Fireworks canvas
+     ============================ */
+  (function fireworksInit(){
+    const canvas = document.createElement('canvas');
+    canvas.id = 'fw';
+    canvas.style.position = 'fixed';
+    canvas.style.left=0;canvas.style.top=0;
+    canvas.style.pointerEvents='none';
+    canvas.style.zIndex=9997;
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    function resize(){ canvas.width = innerWidth; canvas.height = innerHeight; }
+    resize(); window.addEventListener('resize', resize);
+    // simple particle system
+    const particles = [];
+    function addBurst(x,y,color){
+      const count = 40 + Math.round(Math.random()*30);
+      for(let i=0;i<count;i++){
+        const angle = Math.random()*Math.PI*2;
+        const speed = 1.8 + Math.random()*4;
+        particles.push({
+          x, y,
+          vx: Math.cos(angle)*speed,
+          vy: Math.sin(angle)*speed,
+          life: 40 + Math.random()*40,
+          color,
+          size: 2 + Math.random()*3
+        });
+      }
+    }
+    function render(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for(let i=particles.length-1;i>=0;i--){
+        const p = particles[i];
+        p.x += p.vx; p.y += p.vy; p.vy += 0.06; p.life--;
+        ctx.globalAlpha = Math.max(0, p.life/80);
+        ctx.fillStyle = p.color;
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fill();
+        if(p.life<=0) particles.splice(i,1);
+      }
+      requestAnimationFrame(render);
+    }
+    render();
+    // expose burst function
+    window._addFireworksBurst = function(){
+      const x = 100 + Math.random()*(canvas.width-200);
+      const y = 100 + Math.random()*200;
+      const colors = ['#ffcd4d','#ff6b6b','#ffd8a9','#a1ffbd','#8ec5ff'];
+      addBurst(x,y,colors[Math.floor(Math.random()*colors.length)]);
+    };
+    // small periodic bursts
+    setInterval(()=> window._addFireworksBurst(), 2200);
+    // run function for manual burst
+    window.runFireworksBurst = function(){
+      for(let i=0;i<5;i++) window._addFireworksBurst();
+    };
+  })();
+
+  /* ============================
+     Run a manual fireworks burst
+     ============================ */
+  function runFireworksBurst(){ if(window.runFireworksBurst) window.runFireworksBurst(); }
+
+  /* ============================
+     Hover everywhere: adding class hov is already used
+     (done via markup and CSS above)
+     ============================ */
+
+  /* ============================
+     Small accessibility: close modal with Esc
+     ============================ */
+  window.addEventListener('keydown', e=>{
+    if(e.key==='Escape') $('#modal').style.display='none';
+  });
+
+  /* ============================
+     Final UX touches: gently float logo on load
+     ============================ */
+  setTimeout(()=> {
+    const li = $('#logoInner');
+    li.style.transition = 'transform 1.6s cubic-bezier(.2,.9,.2,1)';
+    li.style.transform = 'translateZ(6px) rotateY(8deg)';
+    setTimeout(()=> li.style.transform = 'translateZ(0)', 2600);
+  }, 1600);
+
+  </script>
+</body>
+</html>
